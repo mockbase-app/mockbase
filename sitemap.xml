@@ -43,7 +43,31 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://mockbase.app/guides/phd/thesis-defence-preparation.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://mockbase.app/guides/phd/viva-questions.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://mockbase.app/guides/grant/prepare-grant-interview.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://mockbase.app/guides/grant/grant-research-impact.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://mockbase.app/guides/grant/grant-project-feasibility.html</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
