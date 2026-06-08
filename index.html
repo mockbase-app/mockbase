@@ -21,15 +21,42 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <link rel="manifest" href="favicon/site.webmanifest" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVSKXTH0CH"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-BVSKXTH0CH');
-    </script>
-    <script defer src="https://static.addtoany.com/menu/page.js"></script>
+    <style>
+      .cookie-banner {
+        position: fixed;
+        left: 24px;
+        right: 24px;
+        bottom: 24px;
+        z-index: 9999;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        align-items: center;
+        padding: 18px;
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 18px;
+        background: #0c1a27;
+        color: #f2efe8;
+        box-shadow: 0 16px 40px rgba(0,0,0,0.32);
+      }
+      .cookie-banner[hidden] { display: none; }
+      .cookie-banner p { margin: 0; color: #d6dee6; }
+      .cookie-banner a { color: #9ee6dc; }
+      .cookie-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+      .cookie-actions button {
+        border: 1px solid rgba(255,255,255,0.22);
+        border-radius: 999px;
+        padding: 11px 16px;
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .cookie-accept { background: #9ee6dc; color: #08201e; }
+      .cookie-reject { background: transparent; color: #f2efe8; }
+      @media (max-width: 760px) {
+        .cookie-banner { grid-template-columns: 1fr; left: 14px; right: 14px; bottom: 14px; }
+      }
+    </style>
   </head>
   <body>
     <div class="page-shell">
@@ -39,15 +66,12 @@
           <span class="brand-text">MockBase</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          
-        
-          <p><a href="#products">Products</a></p>
-         
-         <p><a href="./guides/index.html">Guides</a></p>
-        
-          <p><a href="https://forms.gle/AKj1wpMm4DfkDw196" target="_blank" rel="noopener noreferrer">Join the Waitlist</a></p>
 
-        
+          <p><a href="#products">Products</a></p>
+          <p><a href="./guides/index.html">Guides</a></p>
+          <p><a href="./about.html">About</a></p>
+          <p><a href="./contact.html">Contact</a></p>
+          <p><a href="https://forms.gle/AKj1wpMm4DfkDw196" target="_blank" rel="noopener noreferrer">Join the Waitlist</a></p>
         </nav>
 
       </header>
@@ -211,12 +235,15 @@
         </section>
       </main>
 
-      <footer class="site-footer">
+            <footer class="site-footer">
         <p>MockBase</p>
         <p><a href="#products">Products</a></p>
-         
-         <p><a href="./guides/index.html">Guides</a></p>
-        
+        <p><a href="./guides/index.html">Guides</a></p>
+        <p><a href="./about.html">About</a></p>
+        <p><a href="./contact.html">Contact</a></p>
+        <p><a href="./privacy.html">Privacy Policy</a></p>
+        <p><a href="./terms.html">Terms of Use</a></p>
+        <p><a href="./cookies.html">Cookie Policy</a></p>
         <p><a href="https://forms.gle/AKj1wpMm4DfkDw196" target="_blank" rel="noopener noreferrer">Join the Waitlist</a></p>
         <div class="a2a_kit a2a_kit_size_32 a2a_default_style" aria-label="Share MockBase">
           <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
@@ -226,5 +253,74 @@
         </div>
       </footer>
     </div>
+
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice" hidden>
+      <p>
+        MockBase uses essential storage for basic operation. With your permission, it also loads optional analytics and social sharing scripts to understand usage and improve the site. Read the <a href="./cookies.html">Cookie Policy</a>.
+      </p>
+      <div class="cookie-actions">
+        <button class="cookie-reject" id="reject-cookies" type="button">Reject optional cookies</button>
+        <button class="cookie-accept" id="accept-cookies" type="button">Accept optional cookies</button>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var consentKey = 'mockbase_cookie_consent';
+        var analyticsId = 'G-BVSKXTH0CH';
+        var banner = document.getElementById('cookie-banner');
+        var acceptButton = document.getElementById('accept-cookies');
+        var rejectButton = document.getElementById('reject-cookies');
+
+        function loadScript(src) {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = src;
+          document.head.appendChild(script);
+          return script;
+        }
+
+        function enableOptionalServices() {
+          if (window.__mockbaseOptionalServicesLoaded) return;
+          window.__mockbaseOptionalServicesLoaded = true;
+
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){ window.dataLayer.push(arguments); };
+          loadScript('https://www.googletagmanager.com/gtag/js?id=' + analyticsId);
+          window.gtag('js', new Date());
+          window.gtag('config', analyticsId, { anonymize_ip: true });
+
+          loadScript('https://static.addtoany.com/menu/page.js');
+        }
+
+        function hideBanner() {
+          if (banner) banner.hidden = true;
+        }
+
+        var storedChoice = localStorage.getItem(consentKey);
+        if (storedChoice === 'accepted') {
+          hideBanner();
+          enableOptionalServices();
+        } else if (storedChoice === 'rejected') {
+          hideBanner();
+        } else if (banner) {
+          banner.hidden = false;
+        }
+
+        if (acceptButton) {
+          acceptButton.addEventListener('click', function () {
+            localStorage.setItem(consentKey, 'accepted');
+            hideBanner();
+            enableOptionalServices();
+          });
+        }
+
+        if (rejectButton) {
+          rejectButton.addEventListener('click', function () {
+            localStorage.setItem(consentKey, 'rejected');
+            hideBanner();
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
