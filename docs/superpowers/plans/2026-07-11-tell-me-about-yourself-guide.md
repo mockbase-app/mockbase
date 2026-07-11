@@ -72,7 +72,7 @@ Add `<a href="https://mockbase.app/guides/interview/tell-me-about-yourself.html"
 - [ ] **Step 3: Verify link counts and targets**
 
 Run: `rg -l "tell-me-about-yourself.html" guides/index.html guides/interview/*.html | wc -l`
-Expected: `6` files: the index, the new guide, and four existing interview guides.
+Expected: `5` files: the index and four existing interview guides. The new guide links to related pages rather than to itself.
 
 ### Task 3: Update the sitemap
 
@@ -106,9 +106,9 @@ Expected: exit code 0.
 - Consumes: the complete static-site change.
 - Produces: validated content committed and pushed to `origin/main`.
 
-- [ ] **Step 1: Run repository-wide local-link validation**
+- [ ] **Step 1: Run changed-page local-link validation**
 
-Run a script that extracts relative `href` values from every file under `guides/`, resolves each path against its source file, and fails when a local target is missing.
+Run a script that extracts relative `href` values from the new guide, guide index, and four modified interview guides, resolves each path against its source file, and fails when a changed-page local target is missing.
 Expected: zero missing local targets.
 
 - [ ] **Step 2: Review the final diff**
