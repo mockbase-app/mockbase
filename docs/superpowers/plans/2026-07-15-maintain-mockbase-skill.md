@@ -186,7 +186,7 @@ Run:
 python3 /Users/yutian.tang/.codex/skills/maintain-mockbase/scripts/validate_mockbase.py /Users/yutian.tang/Documents/GitHub/mockbase
 ```
 
-Expected: exit code `0` and `Mockbase validation passed`.
+Expected after inspecting the repository: exit code `1` with five pre-existing nested-guide favicon path failures. Preserve these findings as the baseline; do not weaken the validator or modify production pages within this Skill task.
 
 ---
 
@@ -324,7 +324,7 @@ python3 validate_mockbase.py /Users/yutian.tang/Documents/GitHub/mockbase
 python3 /Users/yutian.tang/.codex/skills/.system/skill-creator/scripts/quick_validate.py /Users/yutian.tang/.codex/skills/maintain-mockbase
 ```
 
-Expected: tests report `OK`, repository validation reports `Mockbase validation passed`, and Skill validation reports `Skill is valid!`.
+Expected: tests report `OK`, Skill validation reports `Skill is valid!`, and repository validation reports only the five documented pre-existing favicon path failures. Any additional repository error is a regression and must be resolved before handoff.
 
 - [ ] **Step 6: Verify installation and file hygiene**
 
