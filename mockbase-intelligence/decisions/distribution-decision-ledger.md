@@ -33,3 +33,26 @@ This ledger records public MockBase content and distribution decisions so later 
 - **Success metric:** Within 28 days after indexing, the target page should receive at least 20 impressions, or at least one organic click, or reach average position 20 or better for the target presentation/proposal-defense cluster.
 - **Review date:** 2026-11-01.
 - **Stop or reversal condition:** If the page has fewer than 20 impressions and no qualified query evidence after 28 days, do not create another page in the same cluster. Improve distribution, internal linking or consolidate with an existing proposal-defense page. If an existing proposal-defense page loses impressions while this page gains none, treat it as cannibalisation and consolidate.
+
+## 2026-11-01 - Mock proposal defense rehearsal guide
+
+- **Status:** PENDING publication.
+- **Target:** https://mockbase.app/guides/phd/mock-proposal-defense.html
+- **Change:** One English guide, guide index entry, reciprocal links from the mock-defense explainer and proposal presentation guide, and sitemap entry.
+- **Verdict:** Small editorial experiment justified; no paid-product or blue-ocean conclusion.
+- **GSC baseline:** Inspected in Chrome on 2026-11-01; Web, trailing three months, 2026-07-31 to 2026-10-30; last update 10.5 hours ago. 158 clicks, 17.6K impressions, CTR 0.9%, average position 8.2. These are site impressions, not total market search volume.
+- **Query evidence:** mock proposal defense 0 clicks / 49 impressions; mock defense 3 / 1,362; mock defense questions 2 / 119; proposal defense questions 0 / 124.
+- **Page evidence:** proposal questions 47 clicks / 3,226 impressions; defend-research-proposal 23 / 2,022; mock-defense-questions 20 / 3,374; proposal presentation 7 / 407; mock-defense explainer 3 / 1,249.
+- **Gap and differentiation:** Existing pages cover definitions, general strategy, slide design and questions; this page completes the narrower organizer job with role assignments, a proposal-specific rehearsal agenda, an evidence-based feedback sheet and retest criteria. Existing brief mock plans create overlap risk; keep this page focused on organizing and diagnosing a proposed study.
+- **Incumbents and evidence:** University of Saskatchewan, https://cgps.usask.ca/onboarding/grad-toolkit/roadmaps/thesis-roadmap/crafting.php, explicitly recommends proposal mock defenses; University of Utah Robotics, https://robotics.coe.utah.edu/academics/graduate/handbook/proposaldefense/, documents its institutional proposal format. Both checked 2026-11-01. Free authoritative alternatives exist; competitive difficulty and willingness to pay are not established.
+- **Audience and uncertainty:** Candidates organizing a first proposal rehearsal need to know who to invite, what to test before results exist, and what to change afterward. Existing related-page clicks are willingness-to-read evidence only.
+- **Borrowed resources:** Existing guide cluster, official university guidance, domain visibility, static CSS, internal links and sitemap. Reader resources include supervisor, peers, librarian, methods support and graduate administrators.
+- **Expected result:** Qualified visitors can run a rehearsal and produce prioritized repairs, then use related guides. No new data collection or paid tool investment.
+- **Success metric:** In 28 days after indexing, at least 20 target-cluster impressions AND either one organic click or average position <=20; one related-guide/practice click where existing consent-gated analytics measures it. If unavailable, report engagement as unmeasured.
+- **Review date:** 2026-11-29 provisional indexing check; shift the 28-day outcome review to the actual indexing date when known.
+- **Stop/reversal:** Under 20 impressions with no new query evidence after the window: no further same-cluster pages. Review links/intent; consolidate if overlapping pages lose visibility without incremental relevant traffic.
+- **Verification plan:** Bundled validator (baseline passed), JSON-LD and sitemap parsing, relative links, diff review, desktop/mobile browser preview, then public URL verification after deployment.
+
+- **Pre-publication verification update (2026-11-01):** Bundled validator passed; new-page JSON-LD parsed; all local article links resolve; sitemap XML parsed with unique URLs; diff check passed. Chrome desktop and 390px mobile previews inspected, no page-wide horizontal overflow; question-bank CTA clicked and target heading verified. Status remains PENDING until live verification.
+
+- **Publication status update (2026-11-01): PUBLISHED.** Public article returned HTTP 200 and matched the local HTML exactly. Published through the authenticated GitHub web UI because local HTTPS/SSH credentials were unavailable and the connector returned HTTP 403. Article/related-links commit: 5007492; guide-index commit: 76916cb. Review remains provisional for 2026-11-29, with outcome window anchored to confirmed indexing.
